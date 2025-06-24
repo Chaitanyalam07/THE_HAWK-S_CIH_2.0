@@ -1,129 +1,152 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
-import { Sparkles, Mail, Lock, Eye, EyeOff } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowLeft, Sparkles, Eye, EyeOff, Mail, Lock } from "lucide-react";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement authentication logic
-    console.log("Sign in:", formData);
+    setIsLoading(true);
+
+    // Simulate API call
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate("/dashboard");
+    }, 1000);
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen text-white relative overflow-hidden flex items-center justify-center">
       {/* Animated Background */}
-      <div className="animated-bg"></div>
-      <div className="absolute inset-0">
-        {[...Array(9)].map((_, i) => (
-          <div key={i} className="particle"></div>
-        ))}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 opacity-90"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-40 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
-        <Card className="w-full max-w-md glass-dark border-blue-500/20">
+      {/* Header */}
+      <div className="absolute top-8 left-8 z-20">
+        <Link
+          to="/"
+          className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          Back to Home
+        </Link>
+      </div>
+
+      {/* Sign In Form */}
+      <div className="relative z-10 w-full max-w-md px-4">
+        <Card className="glass-card border-white/10">
           <CardHeader className="text-center space-y-4">
-            <div className="flex items-center justify-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
+            <div className="flex justify-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center pulse-glow">
+                <Sparkles className="w-8 h-8 text-white" />
               </div>
-              <span className="text-2xl font-bold">DesignHub</span>
             </div>
-            <div>
-              <CardTitle className="text-2xl">Welcome back</CardTitle>
-              <CardDescription className="text-gray-400">
-                Sign in to your account to continue designing
-              </CardDescription>
-            </div>
+            <CardTitle className="text-2xl font-bold gradient-text">
+              Welcome Back
+            </CardTitle>
+            <p className="text-gray-300">Sign in to your DesignHub account</p>
           </CardHeader>
+
           <CardContent className="space-y-6">
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSignIn} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="text-white">
+                  Email
+                </Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <Input
                     id="email"
                     type="email"
                     placeholder="Enter your email"
-                    className="pl-10 glass"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="pl-10 glass-card border-white/20 text-white placeholder-gray-400 focus:border-blue-500"
                     required
                   />
                 </div>
               </div>
+
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password" className="text-white">
+                  Password
+                </Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
-                    className="pl-10 pr-10 glass"
-                    value={formData.password}
-                    onChange={(e) =>
-                      setFormData({ ...formData, password: e.target.value })
-                    }
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="pl-10 pr-10 glass-card border-white/20 text-white placeholder-gray-400 focus:border-blue-500"
                     required
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-3 h-4 w-4 text-gray-400 hover:text-white"
+                    className="absolute right-3 top-3 text-gray-400 hover:text-white"
                   >
-                    {showPassword ? <EyeOff /> : <Eye />}
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
                   </button>
                 </div>
               </div>
-              <div className="flex items-center justify-between text-sm">
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" className="rounded" />
+
+              <div className="flex items-center justify-between">
+                <label className="flex items-center space-x-2 text-sm text-gray-300">
+                  <input type="checkbox" className="rounded border-gray-300" />
                   <span>Remember me</span>
                 </label>
                 <Link
                   to="/forgot-password"
-                  className="text-blue-400 hover:text-blue-300"
+                  className="text-sm text-blue-400 hover:text-blue-300"
                 >
                   Forgot password?
                 </Link>
               </div>
+
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 pulse-glow"
+                disabled={isLoading}
               >
-                Sign In
+                {isLoading ? "Signing in..." : "Sign In"}
               </Button>
             </form>
 
             <div className="relative">
-              <Separator />
-              <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background px-2 text-sm text-gray-400">
-                Or continue with
-              </span>
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t border-white/20" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-transparent px-2 text-gray-400">
+                  Or continue with
+                </span>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <Button variant="outline" className="glass">
+              <Button
+                variant="outline"
+                className="glass-card border-white/20 text-white hover:bg-white/10"
+              >
                 <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24">
                   <path
                     fill="currentColor"
@@ -144,7 +167,10 @@ const SignIn = () => {
                 </svg>
                 Google
               </Button>
-              <Button variant="outline" className="glass">
+              <Button
+                variant="outline"
+                className="glass-card border-white/20 text-white hover:bg-white/10"
+              >
                 <svg
                   className="w-4 h-4 mr-2"
                   fill="currentColor"
@@ -156,15 +182,15 @@ const SignIn = () => {
               </Button>
             </div>
 
-            <div className="text-center text-sm">
-              <span className="text-gray-400">Don't have an account? </span>
+            <p className="text-center text-sm text-gray-400">
+              Don't have an account?{" "}
               <Link
                 to="/signup"
                 className="text-blue-400 hover:text-blue-300 font-medium"
               >
-                Sign up
+                Sign up here
               </Link>
-            </div>
+            </p>
           </CardContent>
         </Card>
       </div>
