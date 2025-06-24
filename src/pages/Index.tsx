@@ -52,12 +52,12 @@ const Index = () => {
               <div className="flex items-center gap-8">
                 <Link to="/" className="flex items-center gap-2">
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center pulse-glow">
-                    <Sparkles className="w-6 h-6 text-white" />
-                  </div>
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
                   <span className="text-2xl font-bold gradient-text">
                     DesignHub
                   </span>
-                </Link>
+              </Link>
                 <nav className="hidden lg:flex items-center gap-8">
                   <Link
                     to="/analyzer"
@@ -66,34 +66,34 @@ const Index = () => {
                     <Upload className="w-4 h-4" />
                     Room Analyzer
                   </Link>
-                  <Link
+                      <Link
                     to="/camera"
                     className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
                   >
                     <Camera className="w-4 h-4" />
                     Live Camera
-                  </Link>
-                  <Link
+                      </Link>
+                      <Link
                     to="/ar"
                     className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
                   >
                     <Box className="w-4 h-4" />
                     AR/VR View
-                  </Link>
-                  <Link
+                      </Link>
+                      <Link
                     to="/designer"
                     className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
                   >
                     <Ruler className="w-4 h-4" />
                     Room Designer
-                  </Link>
-                  <Link
+                      </Link>
+                <Link
                     to="/gallery"
                     className="text-gray-300 hover:text-white transition-colors flex items-center gap-2"
-                  >
+                >
                     <Eye className="w-4 h-4" />
                     Gallery
-                  </Link>
+                </Link>
                 </nav>
               </div>
               <div className="flex items-center gap-4">
@@ -123,8 +123,8 @@ const Index = () => {
                   <Link to="/signup">
                     <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 pulse-glow">
                       Get Started
-                    </Button>
-                  </Link>
+                </Button>
+              </Link>
                 </div>
                 <Button variant="ghost" size="icon" className="lg:hidden">
                   <Menu className="w-5 h-5" />
@@ -178,15 +178,15 @@ const Index = () => {
               </div>
               <div className="relative">
                 <div className="glass-card rounded-3xl p-8 relative overflow-hidden floating-element">
-                  <img
-                    src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
-                    alt="Modern living room design"
+                    <img
+                      src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+                      alt="Modern living room design"
                     className="w-full h-96 object-cover rounded-2xl"
                   />
                   <div className="absolute top-12 right-12 glass-card rounded-xl p-4">
                     <div className="flex items-center gap-2 text-white">
                       <CheckCircle className="w-5 h-5 text-green-400" />
-                      <span className="text-sm font-medium">
+                        <span className="text-sm font-medium">
                         Verified Design
                       </span>
                     </div>
@@ -345,7 +345,7 @@ const Index = () => {
                       className={`w-16 h-16 bg-gradient-to-br ${room.color} rounded-2xl flex items-center justify-center mx-auto`}
                     >
                       <room.icon className="w-8 h-8 text-white" />
-                    </div>
+                  </div>
                     <h3 className="text-lg font-semibold text-white">
                       {room.name}
                     </h3>
@@ -355,9 +355,9 @@ const Index = () => {
                       className="glass-card border-blue-500/30"
                     >
                       Design Now
-                    </Button>
-                  </CardContent>
-                </Card>
+                      </Button>
+                </CardContent>
+              </Card>
               ))}
             </div>
           </div>
@@ -368,22 +368,22 @@ const Index = () => {
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto space-y-8">
               <h2 className="text-3xl md:text-5xl font-bold text-white">
-                Ready to transform your space?
-              </h2>
+              Ready to transform your space?
+            </h2>
               <p className="text-xl text-white/90">
                 Join thousands of designers and homeowners using AI-powered
                 design tools
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/signup">
-                  <Button
-                    size="lg"
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/signup">
+                <Button
+                  size="lg"
                     className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg"
-                  >
-                    Start Your Free Trial
+                >
+                  Start Your Free Trial
                     <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
+                </Button>
+              </Link>
                 <div className="glass-card rounded-xl px-6 py-4">
                   <input
                     type="email"
@@ -391,11 +391,11 @@ const Index = () => {
                     className="bg-transparent text-white placeholder-white/70 border-none outline-none text-lg"
                   />
                 </div>
-              </div>
-              <p className="text-sm text-white/70">
-                No credit card required • 14-day free trial • Cancel anytime
-              </p>
             </div>
+            <p className="text-sm text-white/70">
+              No credit card required • 14-day free trial • Cancel anytime
+            </p>
+          </div>
           </div>
         </section>
 
@@ -428,28 +428,28 @@ const Index = () => {
                 <h4 className="font-semibold mb-4 text-white">Platform</h4>
                 <ul className="space-y-3 text-sm text-gray-400">
                   <li>
-                    <Link
+                  <Link
                       to="/analyzer"
                       className="hover:text-white transition-colors"
-                    >
+                  >
                       Room Analyzer
-                    </Link>
+                  </Link>
                   </li>
                   <li>
-                    <Link
+                  <Link
                       to="/camera"
                       className="hover:text-white transition-colors"
-                    >
+                  >
                       Live Camera
-                    </Link>
+                  </Link>
                   </li>
                   <li>
-                    <Link
+                  <Link
                       to="/ar"
                       className="hover:text-white transition-colors"
-                    >
+                  >
                       AR/VR View
-                    </Link>
+                  </Link>
                   </li>
                   <li>
                     <Link
@@ -470,24 +470,24 @@ const Index = () => {
                     <Link
                       to="/gallery"
                       className="hover:text-white transition-colors"
-                    >
-                      Design Gallery
+                  >
+                    Design Gallery
                     </Link>
                   </li>
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Style Guides
-                    </a>
+                    Style Guides
+                  </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Tutorials
-                    </a>
+                    Tutorials
+                  </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Help Center
-                    </a>
+                    Help Center
+                  </a>
                   </li>
                 </ul>
               </div>
@@ -498,26 +498,26 @@ const Index = () => {
                 <ul className="space-y-3 text-sm text-gray-400">
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      About Us
-                    </a>
+                    About Us
+                  </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Careers
-                    </a>
+                    Careers
+                  </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Press
-                    </a>
+                    Press
+                  </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Contact
-                    </a>
+                    Contact
+                  </a>
                   </li>
                 </ul>
-              </div>
+            </div>
 
               {/* Legal */}
               <div>
@@ -525,23 +525,23 @@ const Index = () => {
                 <ul className="space-y-3 text-sm text-gray-400">
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Privacy Policy
-                    </a>
+                  Privacy Policy
+                </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Terms of Service
-                    </a>
+                  Terms of Service
+                </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Cookie Policy
-                    </a>
+                  Cookie Policy
+                </a>
                   </li>
                   <li>
                     <a href="#" className="hover:text-white transition-colors">
-                      Licensing
-                    </a>
+                  Licensing
+                </a>
                   </li>
                 </ul>
               </div>
@@ -549,7 +549,7 @@ const Index = () => {
 
             <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
               <p className="text-sm text-gray-400">
-                © 2024 DesignHub. All rights reserved.
+              © 2024 DesignHub. All rights reserved.
               </p>
               <div className="flex gap-4 mt-4 md:mt-0">
                 {/* Social Icons with glow effect */}

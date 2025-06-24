@@ -357,7 +357,7 @@ const FURNITURE_DATABASE = {
     {
       name: "VADHOLMA Kitchen Island",
       description: "Kitchen island with rack and 3 drawers",
-      price: "$599",
+        price: "$599",
       amazonLink: "https://amazon.com/search?k=kitchen+island+storage",
       ikeaLink:
         "https://www.ikea.com/us/en/p/vadholma-kitchen-island-black-oak-40359154/",
@@ -490,8 +490,8 @@ const RoomAnalyzer = () => {
           message: "❌ No file detected. Please try uploading again.",
         });
         setIsVerifying(false);
-        return;
-      }
+            return;
+          }
 
       const fileName = file.name.toLowerCase();
       const fileSize = file.size;
@@ -504,8 +504,8 @@ const RoomAnalyzer = () => {
           message: "❌ Please upload a valid image file (JPG, PNG, WebP, etc.)",
         });
         setIsVerifying(false);
-        return;
-      }
+            return;
+          }
 
       // Start with a base score assuming most uploads are legitimate room attempts
       let roomScore = 50; // Start with positive base score
@@ -594,7 +594,7 @@ const RoomAnalyzer = () => {
       if (Math.random() > 0.15) {
         roomScore += 20;
         detectedFeatures.push("Good composition for interior photography");
-      } else {
+          } else {
         roomScore -= 5;
         issues.push("Unusual composition detected");
       }
@@ -1043,8 +1043,8 @@ const RoomAnalyzer = () => {
       return;
     }
 
-    const canvas = canvasRef.current;
-    const video = videoRef.current;
+      const canvas = canvasRef.current;
+      const video = videoRef.current;
 
     // Check if video has basic data loaded (less strict than readyState 4)
     if (video.readyState < 2) {
@@ -1252,7 +1252,7 @@ const RoomAnalyzer = () => {
       </div>
 
       <div className="relative z-10">
-        {/* Header */}
+          {/* Header */}
         <header className="transparent-nav border-b border-white/10">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
@@ -1269,8 +1269,8 @@ const RoomAnalyzer = () => {
                   <h1 className="text-2xl font-bold gradient-text">
                     Room Analyzer
                   </h1>
-                </div>
-              </div>
+            </div>
+          </div>
               <div className="flex items-center gap-2">
                 <Button
                   variant="outline"
@@ -1288,9 +1288,9 @@ const RoomAnalyzer = () => {
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Reset
                 </Button>
-              </div>
-            </div>
-          </div>
+                          </div>
+                        </div>
+                          </div>
         </header>
 
         <div className="container mx-auto px-4 py-8">
@@ -1304,7 +1304,7 @@ const RoomAnalyzer = () => {
                 <p className="text-gray-300 text-lg">
                   Get instant AI-powered design insights and suggestions
                 </p>
-              </div>
+                    </div>
 
               {!isCameraActive ? (
                 <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -1341,7 +1341,7 @@ const RoomAnalyzer = () => {
                       </Badge>
                     </CardContent>
                   </Card>
-                </div>
+                              </div>
               ) : (
                 <div className="mb-8">
                   <Card className="glass-card border-white/10">
@@ -1374,31 +1374,31 @@ const RoomAnalyzer = () => {
                             <p className="text-white text-sm">
                               Position your room in the frame
                             </p>
-                          </div>
+                              </div>
 
                           {/* Viewfinder guides */}
                           <div className="absolute inset-4 border-2 border-dashed border-green-400/50 rounded-lg"></div>
                           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                             <div className="w-8 h-8 border-2 border-green-400 rounded-full bg-green-400/20"></div>
-                          </div>
                         </div>
+                      </div>
 
                         {/* Camera Controls */}
                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3">
-                          <Button
+                      <Button
                             onClick={capturePhoto}
                             className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full"
-                          >
+                      >
                             <Camera className="w-5 h-5 mr-2" />
                             Take Photo
-                          </Button>
-                          <Button
+                      </Button>
+                      <Button
                             onClick={stopCamera}
                             variant="outline"
                             className="glass-card border-white/20 px-6 py-3 rounded-full"
                           >
                             Cancel
-                          </Button>
+                      </Button>
                         </div>
                       </div>
 
@@ -1408,9 +1408,9 @@ const RoomAnalyzer = () => {
                           good lighting, and frame the entire room for best AI
                           analysis results.
                         </p>
-                      </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </CardContent>
+                </Card>
                 </div>
               )}
 
@@ -1424,53 +1424,53 @@ const RoomAnalyzer = () => {
 
               {/* Guidelines */}
               <Card className="glass-card border-white/10">
-                <CardHeader>
+                  <CardHeader>
                   <CardTitle className="text-center">
                     Photo Guidelines for Best Results
-                  </CardTitle>
-                </CardHeader>
+                    </CardTitle>
+                  </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-4 gap-4">
                     <div className="text-center p-4">
                       <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <CheckCircle className="w-6 h-6 text-green-400" />
-                      </div>
+                        </div>
                       <h4 className="font-medium text-green-400 mb-1">
                         Perfect
-                      </h4>
+                            </h4>
                       <p className="text-xs text-gray-400">
                         Wide angle, good lighting, clear furniture
                       </p>
-                    </div>
+                          </div>
                     <div className="text-center p-4">
                       <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <AlertTriangle className="w-6 h-6 text-yellow-400" />
-                      </div>
+                          </div>
                       <h4 className="font-medium text-yellow-400 mb-1">
                         Caution
-                      </h4>
+                            </h4>
                       <p className="text-xs text-gray-400">
                         Partial views, mixed lighting
                       </p>
-                    </div>
+                                  </div>
                     <div className="text-center p-4">
                       <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <X className="w-6 h-6 text-red-400" />
-                      </div>
+                                </div>
                       <h4 className="font-medium text-red-400 mb-1">Avoid</h4>
                       <p className="text-xs text-gray-400">
                         Too dark, blurry, outdoor spaces
                       </p>
-                    </div>
+                              </div>
                     <div className="text-center p-4">
                       <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <Lightbulb className="w-6 h-6 text-blue-400" />
-                      </div>
+                            </div>
                       <h4 className="font-medium text-blue-400 mb-1">Tips</h4>
                       <p className="text-xs text-gray-400">
                         Clean the room, turn on lights
                       </p>
-                    </div>
+                          </div>
                   </div>
                 </CardContent>
               </Card>
@@ -1530,8 +1530,8 @@ const RoomAnalyzer = () => {
                             ></div>
                             <span className="text-white text-sm font-medium">
                               {selectedColor.name}
-                            </span>
-                          </div>
+                                      </span>
+                                    </div>
                           <p className="text-xs text-gray-300">
                             Wall color preview
                           </p>
@@ -1544,8 +1544,8 @@ const RoomAnalyzer = () => {
                             Reset
                           </Button>
                         </div>
-                      )}
-                    </div>
+                                )}
+                              </div>
 
                     {/* Verification Status */}
                     {isVerifying && (
@@ -1559,8 +1559,8 @@ const RoomAnalyzer = () => {
                         <p className="text-sm text-gray-400 mt-1">
                           Checking if this is a room image suitable for analysis
                         </p>
-                      </div>
-                    )}
+                            </div>
+                          )}
 
                     {verificationResult && (
                       <div
@@ -1600,21 +1600,21 @@ const RoomAnalyzer = () => {
                                 <li>
                                   • Take photos from doorways or corners to show
                                   room layout
-                                </li>
-                                <li>
+                              </li>
+                              <li>
                                   • Include furniture, walls, and architectural
                                   elements
-                                </li>
-                                <li>
+                              </li>
+                              <li>
                                   • Ensure good lighting to show room details
                                   clearly
                                 </li>
                                 <li>
                                   • Avoid close-ups of individual objects or
                                   people
-                                </li>
-                              </ul>
-                            </div>
+                              </li>
+                            </ul>
+                          </div>
                             <div className="p-3 bg-orange-500/10 border border-orange-500/20 rounded-lg">
                               <p className="text-sm text-orange-300 font-medium mb-2">
                                 🔧 Is this actually a room image?
@@ -1630,7 +1630,7 @@ const RoomAnalyzer = () => {
                               >
                                 Yes, analyze it anyway
                               </Button>
-                            </div>
+                        </div>
                           </div>
                         )}
                       </div>
@@ -1653,23 +1653,23 @@ const RoomAnalyzer = () => {
                             Analyze Room
                           </>
                         )}
-                      </Button>
+                          </Button>
                       <Button
                         variant="outline"
                         className="glass-card border-white/20"
                       >
                         <Share className="w-4 h-4" />
-                      </Button>
+                          </Button>
                       <Button
                         variant="outline"
                         className="glass-card border-white/20"
                       >
                         <Download className="w-4 h-4" />
-                      </Button>
-                    </div>
+                          </Button>
+                        </div>
                   </CardContent>
                 </Card>
-              </div>
+                      </div>
 
               {/* Analysis Results */}
               <div className="space-y-6">
@@ -1710,25 +1710,25 @@ const RoomAnalyzer = () => {
                           <p className="text-sm text-gray-400">Room Type</p>
                           <p className="text-lg font-semibold">
                             {analysisResult.roomType}
-                          </p>
-                        </div>
+                        </p>
+                      </div>
                         <div>
                           <p className="text-sm text-gray-400">Style</p>
                           <p className="text-lg font-semibold">
                             {analysisResult.style}
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
+                        </p>
+                      </div>
+                  </CardContent>
+                </Card>
 
                     {/* Furniture Suggestions */}
                     <Card className="glass-card border-white/10">
-                      <CardHeader>
+                  <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                           <Sofa className="w-5 h-5" />
                           Furniture Recommendations
-                        </CardTitle>
-                      </CardHeader>
+                    </CardTitle>
+                  </CardHeader>
                       <CardContent className="space-y-4">
                         {analysisResult.suggestions.furniture.map(
                           (item, index) => (
@@ -1744,11 +1744,11 @@ const RoomAnalyzer = () => {
                                 />
                                 <div className="flex-1">
                                   <h4 className="font-semibold text-white mb-1">
-                                    {item.name}
-                                  </h4>
+                                  {item.name}
+                                </h4>
                                   <p className="text-sm text-gray-300 mb-2">
-                                    {item.description}
-                                  </p>
+                                  {item.description}
+                                </p>
                                   <p className="text-lg font-bold text-green-400 mb-3">
                                     {item.price}
                                   </p>
@@ -1780,20 +1780,20 @@ const RoomAnalyzer = () => {
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                              </div>
                           ),
                         )}
-                      </CardContent>
-                    </Card>
+                          </CardContent>
+                        </Card>
 
                     {/* Color Palette */}
                     <Card className="glass-card border-white/10">
-                      <CardHeader>
+                  <CardHeader>
                         <CardTitle className="flex items-center gap-2">
-                          <Palette className="w-5 h-5" />
+                      <Palette className="w-5 h-5" />
                           Paint Color Recommendations
-                        </CardTitle>
-                      </CardHeader>
+                    </CardTitle>
+                  </CardHeader>
                       <CardContent className="space-y-4">
                         {analysisResult.suggestions.colors.map(
                           (color, index) => (
@@ -1842,10 +1842,10 @@ const RoomAnalyzer = () => {
                                   </Button>
                                   <span className="text-xs text-gray-400 font-mono text-center">
                                     {color.hexCode}
-                                  </span>
-                                </div>
+                                </span>
                               </div>
-                            </div>
+                          </div>
+                        </div>
                           ),
                         )}
                         <div className="mt-4 p-3 bg-purple-500/10 border border-purple-500/20 rounded-lg">
@@ -1854,19 +1854,19 @@ const RoomAnalyzer = () => {
                             color swatch or "Preview" button to see how it looks
                             on your walls!
                           </p>
-                        </div>
-                      </CardContent>
-                    </Card>
+                    </div>
+                  </CardContent>
+                </Card>
 
                     {/* Lighting Suggestions */}
                     <Card className="glass-card border-white/10">
-                      <CardHeader>
+                <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                           <Lightbulb className="w-5 h-5" />
                           Lighting Recommendations
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-4">
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
                         {analysisResult.suggestions.lighting.map(
                           (item, index) => (
                             <div
@@ -1898,8 +1898,8 @@ const RoomAnalyzer = () => {
                                     >
                                       Shop Now
                                     </a>
-                                  </div>
-                                </div>
+                              </div>
+                            </div>
                               </div>
                             </div>
                           ),
@@ -2102,37 +2102,37 @@ const RoomAnalyzer = () => {
                                       <p className="text-xs text-green-400 mt-1">
                                         {selected3DFurniture.price}
                                       </p>
-                                    </div>
-                                  )}
+                      </div>
+                    )}
                                 </div>
-                              </div>
+                  </div>
 
                               {/* 3D Controls */}
                               <div className="mt-4 grid grid-cols-4 gap-2">
-                                <Button
+                      <Button
                                   variant="outline"
                                   size="sm"
                                   className="glass-card border-white/20"
-                                >
+                      >
                                   <RotateCcw className="w-4 h-4 mr-1" />
                                   Rotate
-                                </Button>
-                                <Button
-                                  variant="outline"
+                      </Button>
+                        <Button
+                          variant="outline"
                                   size="sm"
                                   className="glass-card border-white/20"
-                                >
+                        >
                                   <Eye className="w-4 h-4 mr-1" />
                                   Zoom
-                                </Button>
-                                <Button
+                        </Button>
+                        <Button
                                   variant="outline"
                                   size="sm"
                                   className="glass-card border-white/20"
                                 >
                                   <Layers className="w-4 h-4 mr-1" />
                                   Floors
-                                </Button>
+                        </Button>
                                 <Button
                                   variant="outline"
                                   size="sm"
@@ -2140,18 +2140,18 @@ const RoomAnalyzer = () => {
                                 >
                                   <Lightbulb className="w-4 h-4 mr-1" />
                                   Lighting
-                                </Button>
-                              </div>
-                            </CardContent>
-                          </Card>
+                        </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
 
                           {/* 3D Furniture Selector */}
                           <Card className="glass-card border-white/10">
-                            <CardHeader>
+                  <CardHeader>
                               <CardTitle className="text-lg">
                                 3D Furniture Models
-                              </CardTitle>
-                            </CardHeader>
+                    </CardTitle>
+                  </CardHeader>
                             <CardContent>
                               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                 {analysisResult.suggestions.furniture.map(
@@ -2175,11 +2175,11 @@ const RoomAnalyzer = () => {
                                       />
                                       <h4 className="font-medium text-sm text-white">
                                         {furniture.name}
-                                      </h4>
+                              </h4>
                                       <p className="text-xs text-purple-400">
                                         {furniture.price}
-                                      </p>
-                                    </div>
+                            </p>
+                          </div>
                                   ),
                                 )}
                               </div>
@@ -2189,13 +2189,13 @@ const RoomAnalyzer = () => {
                                   furniture items to highlight them in the 3D
                                   visualization above!
                                 </p>
-                              </div>
-                            </CardContent>
-                          </Card>
+                    </div>
+                  </CardContent>
+                </Card>
                         </div>
                       ) : (
                         <Card className="glass-card border-white/10">
-                          <CardHeader>
+                  <CardHeader>
                             <CardTitle className="flex items-center justify-between">
                               <span className="flex items-center gap-2">
                                 <Eye className="w-5 h-5" />
@@ -2204,9 +2204,9 @@ const RoomAnalyzer = () => {
                               <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">
                                 Interactive
                               </Badge>
-                            </CardTitle>
-                          </CardHeader>
-                          <CardContent>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
                             <div className="h-80 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg relative border border-blue-400/30 overflow-hidden">
                               {/* 2D Floor Plan */}
                               <svg
@@ -2363,15 +2363,15 @@ const RoomAnalyzer = () => {
                                     <Sofa className="w-4 h-4 text-blue-400" />
                                     <span className="text-white text-sm font-medium">
                                       {selected3DFurniture.name}
-                                    </span>
-                                  </div>
+                          </span>
+                        </div>
                                   <p className="text-xs text-gray-300 mb-2">
                                     {selected3DFurniture.description}
                                   </p>
                                   <div className="flex gap-2">
                                     <span className="text-xs text-green-400">
                                       {selected3DFurniture.price}
-                                    </span>
+                                  </span>
                                     <a
                                       href={selected3DFurniture.ikeaLink}
                                       target="_blank"
@@ -2380,29 +2380,29 @@ const RoomAnalyzer = () => {
                                     >
                                       View Product
                                     </a>
-                                  </div>
                                 </div>
-                              )}
+                      </div>
+                    )}
 
                               {/* Instructions */}
                               <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg p-2">
                                 <p className="text-white text-xs">
                                   Click furniture to view details
-                                </p>
-                              </div>
-                            </div>
+                            </p>
+                          </div>
+                          </div>
 
                             {/* 2D Controls */}
                             <div className="mt-4 grid grid-cols-3 gap-2">
-                              <Button
+                          <Button
                                 variant="outline"
                                 size="sm"
                                 className="glass-card border-white/20"
                               >
                                 <Sofa className="w-4 h-4 mr-1" />
                                 Move
-                              </Button>
-                              <Button
+                          </Button>
+                          <Button
                                 variant="outline"
                                 size="sm"
                                 className="glass-card border-white/20"
@@ -2417,10 +2417,10 @@ const RoomAnalyzer = () => {
                               >
                                 <Palette className="w-4 h-4 mr-1" />
                                 Colors
-                              </Button>
-                            </div>
-                          </CardContent>
-                        </Card>
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
                       )}
 
                       <div className="grid grid-cols-2 gap-4">
@@ -2428,7 +2428,7 @@ const RoomAnalyzer = () => {
                           <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 pulse-glow">
                             <Layers className="w-4 h-4 mr-2" />
                             Open in Designer
-                          </Button>
+                        </Button>
                         </Link>
                         <Link to="/ar">
                           <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 pulse-glow">
@@ -2436,8 +2436,8 @@ const RoomAnalyzer = () => {
                             View in AR
                           </Button>
                         </Link>
+                          </div>
                       </div>
-                    </div>
                   </div>
                 ) : (
                   <Card className="glass-card border-white/10">
@@ -2447,8 +2447,8 @@ const RoomAnalyzer = () => {
                     </CardContent>
                   </Card>
                 )}
-              </div>
-            </div>
+                        </div>
+                        </div>
           )}
         </div>
       </div>
